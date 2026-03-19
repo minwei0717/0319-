@@ -1,0 +1,28 @@
+{
+  "version": "1.0",
+  "last_updated": "2026-02-04",
+  "total_skills": 0,
+  "categories": [
+    {
+      "name": "專業技能",
+      "skills": []
+    },
+    {
+      "name": "工具能力",
+      "skills": []
+    },
+    {
+      "name": "軟性技能",
+      "skills": []
+    },
+    {
+      "name": "AI技能",
+      "skills": []
+    }
+  ],
+  "statistics": {
+    "by_category": {},
+    "by_department": {},
+    "top_skills": []
+  }
+}

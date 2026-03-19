@@ -1,0 +1,145 @@
+{
+  "version": "1.0",
+  "last_updated": "2026-02-04",
+  "total_members": 37,
+  "departments": [
+    {
+      "name": "總經理室",
+      "code": "CEO",
+      "level": "策略層",
+      "members": [
+        {"name": "劉辰穎", "title": "總經理", "role": "部級主管", "ai_level": null, "status": "未開始"},
+        {"name": "田定豐", "title": "特助", "role": "核心成員", "ai_level": null, "status": "未開始"}
+      ]
+    },
+    {
+      "name": "業務部",
+      "code": "SALES",
+      "level": "營運層",
+      "members": [
+        {"name": "陳傳中", "title": "業務經理", "role": "部級主管", "ai_level": null, "status": "未開始"},
+        {"name": "蔡雨呈", "title": "業務專員", "role": "核心成員", "ai_level": null, "status": "未開始"}
+      ]
+    },
+    {
+      "name": "營運部",
+      "code": "OPS",
+      "level": "營運層",
+      "members": [
+        {"name": "張明弘", "title": "營運經理", "role": "部級主管", "ai_level": null, "status": "未開始"},
+        {"name": "吳慧雯", "title": "-", "role": "課級主管", "ai_level": null, "status": "未開始"},
+        {"name": "許育維", "title": "-", "role": "課級主管", "ai_level": null, "status": "未開始"},
+        {"name": "劉芸如", "title": "-", "role": "核心成員", "ai_level": null, "status": "未開始"}
+      ]
+    },
+    {
+      "name": "再生部",
+      "code": "RECYCLE",
+      "level": "營運層",
+      "members": [
+        {"name": "郭兆軒", "title": "再生經理", "role": "部級主管", "ai_level": null, "status": "未開始"},
+        {"name": "蘇晉宏", "title": "-", "role": "課級主管", "ai_level": null, "status": "未開始"},
+        {"name": "郭世豪", "title": "-", "role": "課級主管", "ai_level": null, "status": "未開始"}
+      ]
+    },
+    {
+      "name": "研發部",
+      "code": "RD",
+      "level": "策略層",
+      "members": [
+        {"name": "林獻民", "title": "-", "role": "部級主管", "ai_level": null, "status": "未開始"},
+        {"name": "林建煌", "title": "再生組長", "role": "課級主管", "ai_level": null, "status": "未開始"},
+        {"name": "鍾孟珂", "title": "-", "role": "核心成員", "ai_level": null, "status": "未開始"},
+        {"name": "吳欣軒", "title": "-", "role": "核心成員", "ai_level": null, "status": "未開始"}
+      ]
+    },
+    {
+      "name": "行銷部",
+      "code": "MKT",
+      "level": "營運層",
+      "members": [
+        {"name": "張嘉珍", "title": "行銷經理", "role": "部級主管", "ai_level": null, "status": "未開始"},
+        {"name": "許巧薇", "title": "行銷主任", "role": "課級主管", "ai_level": null, "status": "未開始"},
+        {"name": "呂育萱", "title": "行銷專員", "role": "核心成員", "ai_level": null, "status": "未開始"},
+        {"name": "劉沂澤", "title": "行銷專員", "role": "核心成員", "ai_level": null, "status": "未開始"}
+      ]
+    },
+    {
+      "name": "電商部",
+      "code": "EC",
+      "level": "營運層",
+      "members": [
+        {"name": "陳錚妏", "title": "-", "role": "核心成員", "ai_level": null, "status": "未開始"},
+        {"name": "王茹驛", "title": "-", "role": "核心成員", "ai_level": null, "status": "未開始"},
+        {"name": "林慧君", "title": "-", "role": "核心成員", "ai_level": null, "status": "未開始"}
+      ]
+    },
+    {
+      "name": "國際部",
+      "code": "INTL",
+      "level": "營運層",
+      "members": [
+        {"name": "陳家嫺", "title": "-", "role": "部級主管", "ai_level": null, "status": "未開始"},
+        {"name": "蔡明聰", "title": "-", "role": "課級主管", "ai_level": null, "status": "未開始"}
+      ]
+    },
+    {
+      "name": "人資部",
+      "code": "HR",
+      "level": "支援層",
+      "members": [
+        {"name": "王婕誼", "title": "-", "role": "部級主管", "ai_level": null, "status": "未開始"},
+        {"name": "劉宥杉", "title": "-", "role": "課級主管", "ai_level": null, "status": "未開始"},
+        {"name": "孫詩紜", "title": "-", "role": "核心成員", "ai_level": null, "status": "未開始"}
+      ]
+    },
+    {
+      "name": "財務部",
+      "code": "FIN",
+      "level": "支援層",
+      "members": [
+        {"name": "王雅祈", "title": "-", "role": "部級主管", "ai_level": null, "status": "未開始"},
+        {"name": "蔡佩君", "title": "-", "role": "課級主管", "ai_level": null, "status": "未開始"},
+        {"name": "莊宜陵", "title": "-", "role": "課級主管", "ai_level": null, "status": "未開始"}
+      ]
+    },
+    {
+      "name": "資訊部",
+      "code": "IT",
+      "level": "支援層",
+      "members": [
+        {"name": "芮皓玫", "title": "-", "role": "部級主管", "ai_level": null, "status": "未開始"},
+        {"name": "徐銘駿", "title": "-", "role": "核心成員", "ai_level": null, "status": "未開始"},
+        {"name": "陳彥欽", "title": "-", "role": "核心成員", "ai_level": null, "status": "未開始"},
+        {"name": "王薇", "title": "-", "role": "核心成員", "ai_level": null, "status": "未開始"}
+      ]
+    },
+    {
+      "name": "專案拓展部",
+      "code": "BIZ",
+      "level": "策略層",
+      "members": [
+        {"name": "劉致辰", "title": "-", "role": "部級主管", "ai_level": null, "status": "未開始"},
+        {"name": "林昭宏", "title": "-", "role": "核心成員", "ai_level": null, "status": "未開始"},
+        {"name": "葉庭誠", "title": "-", "role": "核心成員", "ai_level": null, "status": "未開始"}
+      ]
+    }
+  ],
+  "statistics": {
+    "by_level": {
+      "策略層": 9,
+      "營運層": 18,
+      "支援層": 10
+    },
+    "by_role": {
+      "部級主管": 12,
+      "課級主管": 10,
+      "核心成員": 15
+    },
+    "by_status": {
+      "已完成": 0,
+      "進行中": 0,
+      "未開始": 37
+    }
+  }
+}

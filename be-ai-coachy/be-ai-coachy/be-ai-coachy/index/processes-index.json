@@ -1,0 +1,19 @@
+{
+  "version": "1.0",
+  "last_updated": "2026-02-04",
+  "total_processes": 0,
+  "processes": [],
+  "cross_department_processes": [],
+  "statistics": {
+    "by_department": {},
+    "by_type": {
+      "部門內": 0,
+      "跨部門": 0
+    },
+    "by_ai_potential": {
+      "高": 0,
+      "中": 0,
+      "低": 0
+    }
+  }
+}
