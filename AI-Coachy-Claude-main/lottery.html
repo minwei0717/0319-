@@ -24,6 +24,29 @@
         .container {
             text-align: center;
             padding: 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* 背景爬寵裝飾 */
+        .bg-deco {
+            position: fixed;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .bg-deco span {
+            position: absolute;
+            opacity: 0.18;
+            animation: floatDeco 6s ease-in-out infinite;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15));
+        }
+
+        @keyframes floatDeco {
+            0%, 100% { transform: translateY(0) rotate(-6deg); }
+            50%      { transform: translateY(-18px) rotate(6deg); }
         }
 
         h1 {
@@ -203,6 +226,19 @@
     </style>
 </head>
 <body>
+    <div class="bg-deco" aria-hidden="true">
+        <span style="top:8%;left:6%;font-size:3.5rem;animation-delay:0s">🦎</span>
+        <span style="top:15%;left:84%;font-size:3rem;animation-delay:1.2s">🐸</span>
+        <span style="top:72%;left:8%;font-size:3.2rem;animation-delay:.6s">🦀</span>
+        <span style="top:80%;left:86%;font-size:3.4rem;animation-delay:2s">🦎</span>
+        <span style="top:42%;left:4%;font-size:2.6rem;animation-delay:1.8s">🐍</span>
+        <span style="top:48%;left:93%;font-size:2.8rem;animation-delay:.9s">🦂</span>
+        <span style="top:90%;left:40%;font-size:3rem;animation-delay:1.5s">🐢</span>
+        <span style="top:4%;left:40%;font-size:2.6rem;animation-delay:2.4s">🐸</span>
+        <span style="top:62%;left:75%;font-size:2.4rem;animation-delay:.3s">🦗</span>
+        <span style="top:24%;left:18%;font-size:2.4rem;animation-delay:1.1s">🦀</span>
+    </div>
+
     <div class="container">
         <img src="logo.png" alt="zero zero" class="logo">
         <h1>2026 雨林探險隊</h1>
