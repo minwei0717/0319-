@@ -219,56 +219,55 @@
 
         <div class="stock-panel">
             <div class="stock-item">
-                <div class="name">🛍️ zero zero 永續造型袋（款式隨機）</div>
-                <div class="count" id="bagCount">200</div>
+                <div class="name">🎟️ 剩餘抽獎次數</div>
+                <div class="count" id="drawsCount">200</div>
+            </div>
+            <div class="stock-item">
+                <div class="name">🛍️ 永續造型袋（剩餘）</div>
+                <div class="count" id="bagCount">5</div>
             </div>
         </div>
 
-        <p class="total-info">剩餘總數：<strong id="totalCount">200</strong> / 200</p>
+        <p class="total-info">已抽出：<strong id="usedCount">0</strong> / 200</p>
     </div>
 
     <script>
-        // 獎品庫存
-        const prizes = {
-            bag: { name: 'zero zero 永續造型袋（款式隨機）', emoji: '🛍️', stock: 200 }
-        };
+        // 抽獎設定：共 200 次抽獎，其中 5 次會中「永續造型袋」，其餘銘謝惠顧
+        const TOTAL_DRAWS = 200;   // 總抽獎次數
+        const TOTAL_BAGS  = 5;     // 中獎名額（袋子數量）
+        const prize = { name: 'zero zero 永續造型袋（款式隨機）', emoji: '🛍️' };
 
+        let drawsLeft = TOTAL_DRAWS;   // 剩餘抽獎次數
+        let bagsLeft  = TOTAL_BAGS;    // 剩餘可中袋子
         let isDrawing = false;
 
-        function getTotal() {
-            return prizes.bag.stock;
-        }
-
         function updateUI() {
-            document.getElementById('bagCount').textContent = prizes.bag.stock;
-            document.getElementById('totalCount').textContent = getTotal();
+            document.getElementById('drawsCount').textContent = drawsLeft;
+            document.getElementById('bagCount').textContent = bagsLeft;
+            document.getElementById('usedCount').textContent = TOTAL_DRAWS - drawsLeft;
 
-            // 數量為 0 時變紅
-            document.getElementById('bagCount').classList.toggle('zero', prizes.bag.stock === 0);
+            document.getElementById('bagCount').classList.toggle('zero', bagsLeft === 0);
+            document.getElementById('drawsCount').classList.toggle('zero', drawsLeft === 0);
 
             // 全部抽完時停用按鈕
-            if (getTotal() === 0) {
+            if (drawsLeft === 0) {
                 document.getElementById('drawBtn').disabled = true;
                 document.getElementById('drawBtn').textContent = '已全部抽完！';
             }
         }
 
+        // 回傳 true=中袋子、false=銘謝惠顧
         function drawPrize() {
-            const total = getTotal();
-            if (total === 0) return null;
+            if (drawsLeft === 0) return null;
 
-            // 依照剩餘數量隨機抽取
-            const rand = Math.floor(Math.random() * total);
-            let cumulative = 0;
-
-            for (const key in prizes) {
-                cumulative += prizes[key].stock;
-                if (rand < cumulative) {
-                    prizes[key].stock--;
-                    return prizes[key];
-                }
+            // 機率 = 剩餘袋子 / 剩餘次數，確保整場剛好 5 個中獎
+            const win = Math.random() * drawsLeft < bagsLeft;
+            drawsLeft--;
+            if (win) {
+                bagsLeft--;
+                return true;
             }
-            return null;
+            return false;
         }
 
         function createConfetti() {
@@ -289,7 +288,7 @@
         }
 
         function draw() {
-            if (isDrawing || getTotal() === 0) return;
+            if (isDrawing || drawsLeft === 0) return;
             isDrawing = true;
 
             const box = document.getElementById('lotteryBox');
@@ -316,9 +315,12 @@
                 box.classList.add('won');
 
                 const result = drawPrize();
-                if (result) {
-                    display.innerHTML = `<span class="emoji">${result.emoji}</span><span>恭喜獲得<br>${result.name}！</span>`;
+                if (result === true) {
+                    display.innerHTML = `<span class="emoji">${prize.emoji}</span><span>恭喜獲得<br>${prize.name}！</span>`;
                     createConfetti();
+                } else {
+                    box.classList.remove('won');
+                    display.innerHTML = `<span class="emoji">😊</span><span>銘謝惠顧<br>謝謝參加！</span>`;
                 }
 
                 updateUI();
