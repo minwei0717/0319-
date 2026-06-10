@@ -13,7 +13,7 @@
 
         body {
             font-family: 'Microsoft JhengHei', sans-serif;
-            background: linear-gradient(135deg, #2ec4b6 0%, #7bc67e 100%);
+            background: linear-gradient(135deg, #19C7BD 0%, #8CD05A 100%);
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -50,7 +50,7 @@
             width: 300px;
             height: 300px;
             margin: 0 auto 40px;
-            background: linear-gradient(145deg, #ffcc02, #ff9500);
+            background: linear-gradient(145deg, #12A89F, #5FB539);
             border-radius: 20px;
             display: flex;
             align-items: center;
@@ -117,7 +117,7 @@
             padding: 18px 60px;
             font-size: 1.5rem;
             font-weight: bold;
-            color: #2ec4b6;
+            color: #14B8AD;
             background: #fff;
             border: none;
             border-radius: 50px;
@@ -219,48 +219,32 @@
 
         <div class="stock-panel">
             <div class="stock-item">
-                <div class="name">📓 筆記本</div>
-                <div class="count" id="notebookCount">100</div>
-            </div>
-            <div class="stock-item">
-                <div class="name">🖊️ 原子筆</div>
-                <div class="count" id="penCount">200</div>
-            </div>
-            <div class="stock-item">
-                <div class="name">🖋️ 筆筒</div>
-                <div class="count" id="holderCount">200</div>
+                <div class="name">🛍️ zero zero 永續造型袋（款式隨機）</div>
+                <div class="count" id="bagCount">5</div>
             </div>
         </div>
 
-        <p class="total-info">剩餘總數：<strong id="totalCount">500</strong> / 500</p>
+        <p class="total-info">剩餘總數：<strong id="totalCount">5</strong> / 5</p>
     </div>
 
     <script>
         // 獎品庫存
         const prizes = {
-            notebook: { name: '筆記本', emoji: '📓', stock: 100 },
-            pen:      { name: '原子筆', emoji: '🖊️', stock: 200 },
-            holder:   { name: '筆筒',   emoji: '🖋️', stock: 200 }
+            bag: { name: 'zero zero 永續造型袋（款式隨機）', emoji: '🛍️', stock: 5 }
         };
 
         let isDrawing = false;
 
         function getTotal() {
-            return prizes.notebook.stock + prizes.pen.stock + prizes.holder.stock;
+            return prizes.bag.stock;
         }
 
         function updateUI() {
-            document.getElementById('notebookCount').textContent = prizes.notebook.stock;
-            document.getElementById('penCount').textContent = prizes.pen.stock;
-            document.getElementById('holderCount').textContent = prizes.holder.stock;
+            document.getElementById('bagCount').textContent = prizes.bag.stock;
             document.getElementById('totalCount').textContent = getTotal();
 
             // 數量為 0 時變紅
-            ['notebookCount', 'penCount', 'holderCount'].forEach((id, i) => {
-                const el = document.getElementById(id);
-                const stock = [prizes.notebook.stock, prizes.pen.stock, prizes.holder.stock][i];
-                el.classList.toggle('zero', stock === 0);
-            });
+            document.getElementById('bagCount').classList.toggle('zero', prizes.bag.stock === 0);
 
             // 全部抽完時停用按鈕
             if (getTotal() === 0) {
@@ -288,7 +272,7 @@
         }
 
         function createConfetti() {
-            const colors = ['#ff6b6b', '#ffd93d', '#6bcb77', '#4d96ff', '#ff6bff', '#ff9500'];
+            const colors = ['#19C7BD', '#8CD05A', '#0FB9AE', '#6FC23F', '#ffffff', '#ffd93d'];
             for (let i = 0; i < 30; i++) {
                 const confetti = document.createElement('div');
                 confetti.className = 'confetti';
@@ -317,7 +301,7 @@
             box.classList.remove('won');
 
             // 抽獎動畫：快速切換顯示
-            const emojis = ['📓', '🖊️', '🖋️', '🎁', '✨', '🎉'];
+            const emojis = ['🛍️', '🎁', '✨', '🎉', '♻️'];
             let tick = 0;
             const interval = setInterval(() => {
                 const e = emojis[tick % emojis.length];
